@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez l'univers du jazz - Concerts, artistes, histoire et actualités">
+    <title>Jazz Harmony - L'âme du jazz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8e44ad;
+            --primary-dark: #732d91;
+            --secondary-color: #f39c12;
+            --accent-color: #e74c3c;
+            --dark-color: #2c3e50;
+            --darker-color: #1a252f;
+            --light-color: #ecf0f1;
+            --lighter-color: #f9f9f9;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+            --gold-color: #f1c40f;
+            --sax-color: #d35400;
+            --piano-color: #3498db;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-dark: 0 10px 20px rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+            background-color: var(--lighter-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--dark-color), var(--darker-color));
+            color: white;
+            padding: 1rem 0;
+            position: relative;
+            z-index: 100;
+            box-shadow: var(--shadow-dark);
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0,50 Q25,25 50,50 T100,50 L100,100 L0,100 Z" fill="rgba(0,0,0,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+        }
+
+        .logo-icon::before {
+            content: '♫';
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 2rem;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover {
+            color: var(--gold-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--gold-color);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%232c3e50" width="1200" height="600"/><circle fill="%23f39c12" cx="200" cy="150" r="50" opacity="0.3"/><circle fill="%23e74c3c" cx="800" cy="200" r="30" opacity="0.4"/><circle fill="%233498db" cx="1000" cy="400" r="60" opacity="0.3"/><path d="M0,500 Q300,400 600,500 T1200,500" stroke="%23ecf0f1" stroke-width="2" fill="none" opacity="0.5"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0,0 L100,100 M100,0 L0,100" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></svg>');
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 1rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        /* Music Notes Animation */
+        .music-notes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .music-note {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.5rem;
+            animation: float 6s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Upcoming Events */
+        .events {
+            background-color: white;
+        }
+
+        .event-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .event-date {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .event-date span {
+            display: block;
+            font-size: 0.8rem;
+        }
+
+        .event-date strong {
+            font-size: 1.5rem;
+        }
+
+        .event-content {
+            padding: 1.5rem;
+            flex: 1;
+        }
+
+        .event-content h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .event-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .event-meta i {
+            margin-right: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .event-description {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .event-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .event-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .event-price {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        /* Artists */
+        .artists {
+            background-color: var(--lighter-color);
+        }
+
+        .artist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .artist-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .artist-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .artist-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .artist-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .artist-card:hover .artist-overlay {
+            opacity: 1;
+        }
+
+        .artist-name {
+            font-family: 'Playfair Display', serif;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .artist-instrument {
+            color: var(--gold-color);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .artist-bio {
+            padding: 1.5rem;
+        }
+
+        .artist-bio p {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* History */
+        .history {
+            background-color: white;
+            position: relative;
+        }
+
+        .history::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0,50 Q25,25 50,50 T100,50" stroke="rgba(142,68,173,0.1)" stroke-width="2" fill="none"/></svg>');
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 1rem 3rem;
+            position: relative;
+            width: 50%;
+            transition: var(--transition);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid var(--primary-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 1.5rem;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: var(--shadow);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            text-align: right;
+        }
+
+        .timeline-year {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-description {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Instruments */
+        .instruments {
+            background-color: var(--lighter-color);
+        }
+
+        .instrument-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .instrument-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .instrument-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .instrument-image {
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .instrument-name {
+            padding: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--dark-color);
+        }
+
+        /* Jazz Styles */
+        .styles {
+            background-color: white;
+        }
+
+        .style-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .style-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            height: 250px;
+            display: flex;
+            align-items: flex-end;
+            color: white;
+        }
+
+        .style-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .style-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: var(--transition);
+        }
+
+        .style-card:hover .style-bg {
+            transform: scale(1.05);
+        }
+
+        .style-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        }
+
+        .style-content {
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+        }
+
+        .style-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .style-content p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="60" cy="80" r="3" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .newsletter-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .newsletter h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .newsletter-form button {
+            padding: 1rem 2rem;
+            background-color: var(--dark-color);
+            color: white;
+            border: none;
+            border-radius: 0 50px 50px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-form button:hover {
+            background-color: var(--darker-color);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .footer-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-color);
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.3rem;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            color: var(--gold-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom a {
+            color: var(--gold-color);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--dark-color);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+                z-index: 99;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                margin: 1.5rem 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item::after {
+                left: 21px;
+            }
+
+            .timeline-item:nth-child(even)::after {
+                left: 21px;
+            }
+
+            .timeline-content {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form input {
+                border-radius: 50px;
+                margin-bottom: 1rem;
+            }
+
+            .newsletter-form button {
+                border-radius: 50px;
+            }
+
+            .event-card {
+                flex-direction: column;
+            }
+
+            .event-image {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                width: 95%;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .timeline-item {
+                padding-left: 60px;
+            }
+        }
+
+        /* Icons */
+        [class^="icon-"], [class*=" icon-"] {
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            speak: none;
+            font-style: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .icon-calendar-alt:before { content: "\f073"; }
+        .icon-clock:before { content: "\f017"; }
+        .icon-map-marker-alt:before { content: "\f3c5"; }
+        .icon-ticket-alt:before { content: "\f3ff"; }
+        .icon-user:before { content: "\f007"; }
+        .icon-envelope:before { content: "\f0e0"; }
+        .icon-phone:before { content: "\f095"; }
+        .icon-map:before { content: "\f279"; }
+        .icon-music:before { content: "\f001"; }
+        .icon-saxophone:before { content: "\f883"; }
+        .icon-guitar:before { content: "\f7a6"; }
+        .icon-drum:before { content: "\f569"; }
+        .icon-piano-keyboard:before { content: "\f8d5"; }
+        .icon-trumpet:before { content: "\f8e0"; }
+        .icon-bass-guitar:before { content: "\f8e2"; }
+        .icon-microphone-alt:before { content: "\f3c9"; }
+        .icon-facebook-f:before { content: "\f09a"; }
+        .icon-twitter:before { content: "\f099"; }
+        .icon-instagram:before { content: "\f16d"; }
+        .icon-youtube:before { content: "\f167"; }
+        .icon-spotify:before { content: "\f1bc"; }
+        .icon-soundcloud:before { content: "\f1be"; }
+        .icon-bars:before { content: "\f0c9"; }
+        .icon-times:before { content: "\f00d"; }
+        .icon-chevron-right:before { content: "\f054"; }
+        .icon-chevron-left:before { content: "\f053"; }
+        .icon-quote-left:before { content: "\f10d"; }
+        .icon-quote-right:before { content: "\f10e"; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon"></div>
+                Jazz Harmony
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="icon-bars"></i>
+            </button>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#concerts">Concerts</a></li>
+                    <li><a href="#artistes">Artistes</a></li>
+                    <li><a href="#histoire">Histoire</a></li>
+                    <li><a href="#instruments">Instruments</a></li>
+                    <li><a href="#styles">Styles</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="music-notes" id="musicNotes"></div>
+        <div class="hero-content">
+            <h1>L'Âme du Jazz</h1>
+            <p>Découvrez l'univers envoûtant du jazz à travers ses concerts, ses artistes légendaires et son histoire riche en émotions.</p>
+            <div>
+                <a href="#concerts" class="btn">Prochains concerts</a>
+                <a href="#artistes" class="btn btn-secondary">Découvrir les artistes</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section class="section events" id="concerts">
+        <div class="container">
+            <div class="section-title">
+                <h2>Prochains concerts</h2>
+                <p class="section-subtitle">Ne manquez pas nos événements à venir et plongez dans l'univers magique du jazz</p>
+            </div>
+
+            <div class="event-card">
+                <div class="event-image" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 400 200&quot;><rect fill=&quot;%232c3e50&quot; width=&quot;400&quot; height=&quot;200&quot;/><circle fill=&quot;%23f39c12&quot; cx=&quot;100&quot; cy=&quot;80&quot; r=&quot;30&quot; opacity=&quot;0.8&quot;/><circle fill=&quot;%23e74c3c&quot; cx=&quot;200&quot; cy=&quot;60&quot; r=&quot;25&quot; opacity=&quot;0.7&quot;/><circle fill=&quot;%233498db&quot; cx=&quot;300&quot; cy=&quot;90&quot; r=&quot;35&quot; opacity=&quot;0.6&quot;/><rect fill=&quot;%23ecf0f1&quot; x=&quot;50&quot; y=&quot;150&quot; width=&quot;300&quot; height=&quot;30&quot; opacity=&quot;0.9&quot;/></svg>');">
+                    <div class="event-date">
+                        <span>Juin</span>
+                        <strong>15</strong>
+                    </div>
+                </div>
+                <div class="event-content">
+                    <h3>Soirée Jazz Manouche</h3>
+                    <div class="event-meta">
+                        <span><i class="icon-calendar-alt"></i> 15 juin 2023</span>
+                        <span><i class="icon-clock"></i> 20h30 - 23h30</span>
+                        <span><i class="icon-map-marker-alt"></i> Le Sunset, Paris</span>
+                    </div>
+                    <p class="event-description">Une soirée exceptionnelle dédiée au jazz manouche avec les meilleurs artistes français. Au programme : Django Reinhardt revisité, standards du jazz et compositions originales.</p>
+                    <div class="event-tags">
+                        <span class="tag">Jazz Manouche</span>
+                        <span class="tag">Guitare</span>
+                        <span class="tag">Violon</span>
+                    </div>
+                    <div class="event-footer">
+                        <div class="event-price">25€ - 45€</div>
+                        <a href="#" class="btn"><i class="icon-ticket-alt"></i> Réserver</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-image" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 400 200&quot;><rect fill=&quot;%231a252f&quot; width=&quot;400&quot; height=&quot;200&quot;/><circle fill=&quot;%233498db&quot; cx=&quot;150&quot; cy=&quot;70&quot; r=&quot;40&quot; opacity=&quot;0.7&quot;/><circle fill=&quot;%23f1c40f&quot; cx=&quot;250&quot; cy=&quot;90&quot; r=&quot;30&quot; opacity=&quot;0.8&quot;/><rect fill=&quot;%23ecf0f1&quot; x=&quot;70&quot; y=&quot;140&quot; width=&quot;260&quot; height=&quot;40&quot; opacity=&quot;0.9&quot;/></svg>');">
+                    <div class="event-date">
+                        <span>Juin</span>
+                        <strong>22</strong>
+                    </div>
+                </div>
+                <div class="event-content">
+                    <h3>Festival Jazz à Saint-Germain</h3>
+                    <div class="event-meta">
+                        <span><i class="icon-calendar-alt"></i> 22-25 juin 2023</span>
+                        <span><i class="icon-clock"></i> 18h - 01h</span>
+                        <span><i class="icon-map-marker-alt"></i> Saint-Germain-des-Prés</span>
+                    </div>
+                    <p class="event-description">Quatre jours de jazz dans le quartier mythique de Saint-Germain-des-Prés. Plus de 50 concerts gratuits en plein air, avec des artistes internationaux et des découvertes prometteuses.</p>
+                    <div class="event-tags">
+                        <span class="tag">Festival</span>
+                        <span class="tag">Gratuit</span>
+                        <span class="tag">Plein air</span>
+                    </div>
+                    <div class="event-footer">
+                        <div class="event-price">Gratuit</div>
+                        <a href="#" class="btn"><i class="icon-info-circle"></i> Plus d'infos</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-image" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 400 200&quot;><rect fill=&quot;%232c3e50&quot; width=&quot;400&quot; height=&quot;200&quot;/><ellipse fill=&quot;%23e74c3c&quot; cx=&quot;200&quot; cy=&quot;100&quot; rx=&quot;150&quot; ry=&quot;50&quot; opacity=&quot;0.6&quot;/><circle fill=&quot;%23f1c40f&quot; cx=&quot;100&quot; cy=&quot;80&quot; r=&quot;20&quot; opacity=&quot;0.9&quot;/><circle fill=&quot;%233498db&quot; cx=&quot;300&quot; cy=&quot;70&quot; r=&quot;25&quot; opacity=&quot;0.8&quot;/></svg>');">
+                    <div class="event-date">
+                        <span>Juillet</span>
+                        <strong>05</strong>
+                    </div>
+                </div>
+                <div class="event-content">
+                    <h3>Jam Session avec Wynton Marsalis</h3>
+                    <div class="event-meta">
+                        <span><i class="icon-calendar-alt"></i> 5 juillet 2023</span>
+                        <span><i class="icon-clock"></i> 21h - 00h</span>
+                        <span><i class="icon-map-marker-alt"></i> New Morning, Paris</span>
+                    </div>
+                    <p class="event-description">Une soirée unique avec le légendaire trompettiste Wynton Marsalis. Une jam session exceptionnelle où se mêleront standards du jazz et improvisations audacieuses.</p>
+                    <div class="event-tags">
+                        <span class="tag">Jam Session</span>
+                        <span class="tag">Trompette</span>
+                        <span class="tag">Légende</span>
+                    </div>
+                    <div class="event-footer">
+                        <div class="event-price">45€ - 75€</div>
+                        <a href="#" class="btn"><i class="icon-ticket-alt"></i> Réserver</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#" class="btn">Voir tous les concerts</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Artists -->
+    <section class="section artists" id="artistes">
+        <div class="container">
+            <div class="section-title">
+                <h2>Artistes à l'affiche</h2>
+                <p class="section-subtitle">Découvrez les talents qui font vibrer la scène jazz française et internationale</p>
+            </div>
+
+            <div class="artist-grid">
+                <div class="artist-card">
+                    <div class="artist-image" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 300 250&quot;><rect fill=&quot;%23666&quot; width=&quot;300&quot; height=&quot;250&quot;/><circle fill=&quot;%23f39c12&quot; cx=&quot;150&quot; cy=&quot;100&quot; r=&quot;40&quot; opacity=&quot;0.8&quot;/><rect fill=&quot;%23333&quot; x=&quot;120&quot; y=&quot;140&quot; width=&quot;60&quot; height=&quot;80&quot; opacity=&quot;0.9&quot;/><rect fill=&quot;%23555&quot; x=&quot;100&quot; y=&quot;160&quot; width=&quot;100&quot; height=&quot;20&quot; opacity=&quot;0.7&quot;/></svg>');">
+                        <div class="artist-overlay">
+                            <h3 class="artist-name">Thomas Enhco</h3>
+                            <p class="artist-instrument">Pianiste & Compositeur</p>
+                            <div class="social-links">
+                                <a href="#"><i class="icon-facebook-f"></i></a>
+                                <a href="#"><i class="icon-twitter"></i></a>
+                                <a href="#"><i class="icon-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="artist-bio">
+                        <p>Thomas Enhco est un pianiste et compositeur français de jazz, né en 1988. Il est reconnu pour son style unique qui mêle jazz, classique et influences world music.</p>
+                        <p><strong>Prochain concert :</strong> 15 juin au Sunset</p>
+                    </div>
+                </div>
+
+                <div class="artist-card">
+                    <div class="artist-image" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 300 250&quot;><rect fill=&quot;%23555&quot; width=&quot;300&quot; height=&quot;250&quot;/><ellipse fill=&quot;%23e74c3c&quot; cx=&quot;150&quot; cy=&quot;100&quot; rx=&quot;30&quot; ry=&quot;80&quot; opacity=&quot;0.8&quot;/><circle fill=&quot;%23333&quot; cx=&quot;150&quot; cy=&quot;60&quot; r=&quot;20&quot; opacity=&quot;0.9&quot;/></svg>');">
+                        <div class="artist-overlay">
+                            <h3 class="artist-name">Sylvie Vartan</h3>
+                            <p class="artist-instrument">Chanteuse & Icône</p>
+                            <div class="social-links">
+                                <a href="#"><i class="icon-instagram"></i></a>
+                                <a href="#"><i class="icon-youtube"></i></a>
+                                <a href="#"><i class="icon-spotify"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="artist-bio">
+                        <p>Sylvie Vartan, née en 1944, est une chanteuse et actrice française d'origine bulgare. Elle est une figure majeure de la chanson française et du jazz vocal.</p>
+                        <p><strong>Prochain concert :</strong> 22 juillet à l'Olympia</p>
+                    </div>
+                </div>
+
+                <div class="artist-card">
+                    <div class="artist-image" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 300 250&quot;><rect fill=&quot;%23444&quot; width=&quot;300&quot; height=&quot;250&quot;/><ellipse fill=&quot;%233498db&quot; cx=&quot;150&quot; cy=&quot;100&quot; rx=&quot;25&quot; ry=&quot;60&quot; opacity=&quot;0.8&quot;/><circle fill=&quot;%23f1c40f&quot; cx=&quot;150&quot; cy=&quot;70&quot; r=&quot;15&quot; opacity=&quot;0.9&quot;/></svg>');">
+                        <div class="artist-overlay">
+                            <h3 class="artist-name">Ibrahim Maalouf</h3>
+                            <p class="artist-instrument">Trompettiste & Compositeur</p>
+                            <div class="social-links">
+                                <a href="#"><i class="icon-facebook-f"></i></a>
+                                <a href="#"><i class="icon-instagram"></i></a>
+                                <a href="#"><i class="icon-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="artist-bio">
+                        <p>Ibrahim Maalouf, né en 1980, est un trompettiste, compositeur et arrangeur franco-libanais. Il est connu pour son approche innovante du jazz et ses collaborations avec des artistes variés.</p>
+                        <p><strong>Prochain concert :</strong> 5 juillet au New Morning</p>
+                    </div>
+                </div>
+
+                <div class="artist-card">
+                    <div class="artist-image" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 300 250&quot;><rect fill=&quot;%23666&quot; width=&quot;300&quot; height=&quot;250&quot;/><circle fill=&quot;%23f39c12&quot; cx=&quot;150&quot; cy=&quot;80&quot; r=&quot;30&quot; opacity=&quot;0.8&quot;/><rect fill=&quot;%23333&quot; x=&quot;100&quot; y=&quot;120&quot; width=&quot;100&quot; height=&quot;100&quot; opacity=&quot;0.7&quot;/></svg>');">
+                        <div class="artist-overlay">
+                            <h3 class="artist-name">Anne Paceo</h3>
+                            <p class="artist-instrument">Batteuse & Compositrice</p>
+                            <div class="social-links">
+                                <a href="#"><i class="icon-facebook-f"></i></a>
+                                <a href="#"><i class="icon-instagram"></i></a>
+                                <a href="#"><i class="icon-soundcloud"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="artist-bio">
+                        <p>Anne Paceo, née en 1984, est une batteuse et compositrice française. Elle est reconnue pour son énergie scénique et ses projets innovants qui repoussent les limites du jazz.</p>
+                        <p><strong>Prochain concert :</strong> 12 août au Duc des Lombards</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#" class="btn">Voir tous les artistes</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- History of Jazz -->
+    <section class="section history" id="histoire">
+        <div class="container">
+            <div class="section-title">
+                <h2>L'histoire du jazz</h2>
+                <p class="section-subtitle">Découvrez l'évolution fascinante du jazz, de ses origines à aujourd'hui</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1890-1910</div>
+                        <h3 class="timeline-title">Les origines</h3>
+                        <p class="timeline-description">Le jazz naît à La Nouvelle-Orléans, fruit du métissage culturel entre les traditions africaines, européennes et caribéennes. Les work songs, gospels et blues sont les racines de ce nouveau genre musical.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1920-1930</div>
+                        <h3 class="timeline-title">L'ère du jazz traditionnel</h3>
+                        <p class="timeline-description">Le jazz se répand aux États-Unis avec l'exode des musiciens de La Nouvelle-Orléans vers Chicago et New York. Louis Armstrong devient une figure majeure avec son jeu révolutionnaire à la trompette.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1930-1940</div>
+                        <h3 class="timeline-title">L'âge d'or du swing</h3>
+                        <p class="timeline-description">Le swing domine la scène musicale avec les big bands de Duke Ellington, Count Basie et Benny Goodman. Le jazz devient la musique populaire par excellence, dansée dans les salles de bal.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1940-1950</div>
+                        <h3 class="timeline-title">La révolution bebop</h3>
+                        <p class="timeline-description">Charlie Parker et Dizzy Gillespie inventent le bebop, un jazz plus complexe et rapide qui privilégie l'improvisation. Le jazz devient une musique d'écoute plutôt que de danse.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1950-1960</div>
+                        <h3 class="timeline-title">Le cool jazz et le hard bop</h3>
+                        <p class="timeline-description">Miles Davis et Dave Brubeck popularisent le cool jazz, plus calme et mélodique. En réaction, le hard bop émerge avec Art Blakey et Horace Silver, réintroduisant des éléments blues et gospel.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1960-1970</div>
+                        <h3 class="timeline-title">Le free jazz et la fusion</h3>
+                        <p class="timeline-description">John Coltrane et Ornette Coleman repoussent les limites avec le free jazz, tandis que Miles Davis invente la fusion en mélangeant jazz et rock avec "Bitches Brew".</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1980-2000</div>
+                        <h3 class="timeline-title">Le jazz contemporain</h3>
+                        <p class="timeline-description">Le jazz se diversifie avec l'émergence du smooth jazz, du jazz acid et des fusions avec la world music. Des artistes comme Wynton Marsalis œuvrent pour la préservation du patrimoine jazz.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2000-Aujourd'hui</div>
+                        <h3 class="timeline-title">Le jazz au XXIe siècle</h3>
+                        <p class="timeline-description">Le jazz continue d'évoluer avec des artistes comme Kamasi Washington, Esperanza Spalding ou Shabaka Hutchings. Les frontières entre jazz, hip-hop et musique électronique s'estompent.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instruments -->
+    <section class="section instruments" id="instruments">
+        <div class="container">
+            <div class="section-title">
+                <h2>Les instruments du jazz</h2>
+                <p class="section-subtitle">Découvrez les instruments qui donnent au jazz sa couleur unique et son âme improvisatrice</p>
+            </div>
+
+            <div class="instrument-grid">
+                <div class="instrument-card">
+                    <div class="instrument-image" style="background: linear-gradient(45deg, var(--sax-color), #b33900);">
+                        <i class="icon-saxophone" style="font-size: 5rem; color: white; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></i>
+                    </div>
+                    <div class="instrument-name">Saxophone</div>
+                </div>
+
+                <div class="instrument-card">
+                    <div class="instrument-image" style="background: linear-gradient(45deg, var(--piano-color), #2980b9);">
+                        <i class="icon-piano-keyboard" style="font-size: 5rem; color: white; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></i>
+                    </div>
+                    <div class="instrument-name">Piano</div>
+                </div>
+
+                <div class="instrument-card">
+                    <div class="instrument-image" style="background: linear-gradient(45deg, #333, #555);">
+                        <i class="icon-trumpet" style="font-size: 5rem; color: white; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></i>
+                    </div>
+                    <div class="instrument-name">Trompette</div>
+                </div>
+
+                <div class="instrument-card">
+                    <div class="instrument-image" style="background: linear-gradient(45deg, #8e44ad, #9b59b6);">
+                        <i class="icon-bass-guitar" style="font-size: 5rem; color: white; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></i>
+                    </div>
+                    <div class="instrument-name">Contrebasse</div>
+                </div>
+
+                <div class="instrument-card">
+                    <div class="instrument-image" style="background: linear-gradient(45deg, #e67e22, #d35400);">
+                        <i class="icon-guitar" style="font-size: 5rem; color: white; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></i>
+                    </div>
+                    <div class="instrument-name">Guitare</div>
+                </div>
+
+                <div class="instrument-card">
+                    <div class="instrument-image" style="background: linear-gradient(45deg, #34495e, #2c3e50);">
+                        <i class="icon-drum" style="font-size: 5rem; color: white; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></i>
+                    </div>
+                    <div class="instrument-name">Batterie</div>
+                </div>
+
+                <div class="instrument-card">
+                    <div class="instrument-image" style="background: linear-gradient(45deg, #f39c12, #e67e22);">
+                        <i class="icon-microphone-alt" style="font-size: 5rem; color: white; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></i>
+                    </div>
+                    <div class="instrument-name">Voix</div>
+                </div>
+
+                <div class="instrument-card">
+                    <div class="instrument-image" style="background: linear-gradient(45deg, #1abc9c, #16a085);">
+                        <i class="icon-clarinet" style="font-size: 5rem; color: white; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></i>
+                    </div>
+                    <div class="instrument-name">Clarinette</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jazz Styles -->
+    <section class="section styles" id="styles">
+        <div class="container">
+            <div class="section-title">
+                <h2>Les styles de jazz</h2>
+                <p class="section-subtitle">Explorez la diversité des styles qui font la richesse du jazz à travers le temps</p>
+            </div>
+
+            <div class="style-grid">
+                <div class="style-card">
+                    <div class="style-bg" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 400 250&quot;><rect fill=&quot;%232c3e50&quot; width=&quot;400&quot; height=&quot;250&quot;/><circle fill=&quot;%23f39c12&quot; cx=&quot;100&quot; cy=&quot;80&quot; r=&quot;30&quot; opacity=&quot;0.7&quot;/><circle fill=&quot;%23e74c3c&quot; cx=&quot;300&quot; cy=&quot;120&quot; r=&quot;25&quot; opacity=&quot;0.6&quot;/><path d=&quot;M0,200 Q100,150 200,200 T400,200&quot; stroke=&quot;%23ecf0f1&quot; stroke-width=&quot;2&quot; fill=&quot;none&quot; opacity=&quot;0.5&quot;/></svg>');"></div>
+                    <div class="style-overlay"></div>
+                    <div class="style-content">
+                        <h3>Dixieland</h3>
+                        <p>Le style original de La Nouvelle-Orléans, caractérisé par un jeu collectif polyphonique et un rythme entraînant.</p>
+                    </div>
+                </div>
+
+                <div class="style-card">
+                    <div class="style-bg" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 400 250&quot;><rect fill=&quot;%231a252f&quot; width=&quot;400&quot; height=&quot;250&quot;/><circle fill=&quot;%233498db&quot; cx=&quot;150&quot; cy=&quot;70&quot; r=&quot;40&quot; opacity=&quot;0.7&quot;/><circle fill=&quot;%23f1c40f&quot; cx=&quot;250&quot; cy=&quot;120&quot; r=&quot;30&quot; opacity=&quot;0.8&quot;/><rect fill=&quot;%23ecf0f1&quot; x=&quot;50&quot; y=&quot;200&quot; width=&quot;300&quot; height=&quot;30&quot; opacity=&quot;0.9&quot;/></svg>');"></div>
+                    <div class="style-overlay"></div>
+                    <div class="style-content">
+                        <h3>Swing</h3>
+                        <p>Le style dansant des années 1930-1940, popularisé par les big bands de Duke Ellington et Count Basie.</p>
+                    </div>
+                </div>
+
+                <div class="style-card">
+                    <div class="style-bg" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 400 250&quot;><rect fill=&quot;%232c3e50&quot; width=&quot;400&quot; height=&quot;250&quot;/><circle fill=&quot;%23e74c3c&quot; cx=&quot;200&quot; cy=&quot;100&quot; r=&quot;50&quot; opacity=&quot;0.6&quot;/><circle fill=&quot;%23f1c40f&quot; cx=&quot;100&quot; cy=&quot;80&quot; r=&quot;20&quot; opacity=&quot;0.9&quot;/><circle fill=&quot;%233498db&quot; cx=&quot;300&quot; cy=&quot;120&quot; r=&quot;25&quot; opacity=&quot;0.8&quot;/></svg>');"></div>
+                    <div class="style-overlay"></div>
+                    <div class="style-content">
+                        <h3>Bebop</h3>
+                        <p>Un jazz rapide et complexe né dans les années 1940, avec Charlie Parker et Dizzy Gillespie comme figures de proue.</p>
+                    </div>
+                </div>
+
+                <div class="style-card">
+                    <div class="style-bg" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 400 250&quot;><rect fill=&quot;%231a252f&quot; width=&quot;400&quot; height=&quot;250&quot;/><ellipse fill=&quot;%233498db&quot; cx=&quot;200&quot; cy=&quot;125&quot; rx=&quot;150&quot; ry=&quot;60&quot; opacity=&quot;0.7&quot;/><circle fill=&quot;%23f1c40f&quot; cx=&quot;150&quot; cy=&quot;100&quot; r=&quot;15&quot; opacity=&quot;0.9&quot;/><circle fill=&quot;%23e74c3c&quot; cx=&quot;250&quot; cy=&quot;150&quot; r=&quot;20&quot; opacity=&quot;0.8&quot;/></svg>');"></div>
+                    <div class="style-overlay"></div>
+                    <div class="style-content">
+                        <h3>Cool Jazz</h3>
+                        <p>Un style plus calme et mélodique, popularisé par Miles Davis et Dave Brubeck dans les années 1950.</p>
+                    </div>
+                </div>
+
+                <div class="style-card">
+                    <div class="style-bg" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 400 250&quot;><rect fill=&quot;%232c3e50&quot; width=&quot;400&quot; height=&quot;250&quot;/><circle fill=&quot;%23e74c3c&quot; cx=&quot;100&quot; cy=&quot;80&quot; r=&quot;35&quot; opacity=&quot;0.8&quot;/><circle fill=&quot;%23f39c12&quot; cx=&quot;300&quot; cy=&quot;120&quot; r=&quot;25&quot; opacity=&quot;0.7&quot;/><path d=&quot;M50,200 Q200,100 350,200&quot; stroke=&quot;%23ecf0f1&quot; stroke-width=&quot;3&quot; fill=&quot;none&quot; opacity=&quot;0.6&quot;/></svg>');"></div>
+                    <div class="style-overlay"></div>
+                    <div class="style-content">
+                        <h3>Free Jazz</h3>
+                        <p>Un style avant-gardiste né dans les années 1960, caractérisé par l'absence de structure harmonique fixe.</p>
+                    </div>
+                </div>
+
+                <div class="style-card">
+                    <div class="style-bg" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 400 250&quot;><rect fill=&quot;%231a252f&quot; width=&quot;400&quot; height=&quot;250&quot;/><rect fill=&quot;%233498db&quot; x=&quot;50&quot; y=&quot;50&quot; width=&quot;300&quot; height=&quot;150&quot; opacity=&quot;0.3&quot;/><circle fill=&quot;%23f1c40f&quot; cx=&quot;200&quot; cy=&quot;125&quot; r=&quot;40&quot; opacity=&quot;0.8&quot;/><path d=&quot;M0,200 L400,200&quot; stroke=&quot;%23ecf0f1&quot; stroke-width=&quot;2&quot; opacity=&quot;0.7&quot;/></svg>');"></div>
+                    <div class="style-overlay"></div>
+                    <div class="style-content">
+                        <h3>Fusion</h3>
+                        <p>Un mélange de jazz et de rock, popularisé par Miles Davis et des groupes comme Weather Report dans les années 1970.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container newsletter-content">
+            <h2>Abonnez-vous à notre newsletter</h2>
+            <p>Recevez les dernières actualités du jazz, les annonces de concerts et des contenus exclusifs directement dans votre boîte mail.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Votre adresse email">
+                <button type="submit">S'abonner</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">Jazz Harmony</div>
+                    <p class="footer-text">Jazz Harmony est votre guide ultime pour découvrir l'univers du jazz, des concerts aux artistes en passant par l'histoire et les styles de ce genre musical intemporel.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="icon-facebook-f"></i></a>
+                        <a href="#"><i class="icon-twitter"></i></a>
+                        <a href="#"><i class="icon-instagram"></i></a>
+                        <a href="#"><i class="icon-youtube"></i></a>
+                        <a href="#"><i class="icon-spotify"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h3 class="footer-title">Liens utiles</h3>
+                    <ul class="footer-links">
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#concerts">Concerts</a></li>
+                        <li><a href="#artistes">Artistes</a></li>
+                        <li><a href="#histoire">Histoire</a></li>
+                        <li><a href="#instruments">Instruments</a></li>
+                        <li><a href="#styles">Styles</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h3 class="footer-title">Événements</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Calendrier des concerts</a></li>
+                        <li><a href="#">Festivals de jazz</a></li>
+                        <li><a href="#">Jam sessions</a></li>
+                        <li><a href="#">Ateliers & Masterclasses</a></li>
+                        <li><a href="#">Billetterie</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3 class="footer-title">Contact</h3>
+                    <ul class="footer-links">
+                        <li><i class="icon-envelope"></i> contact@jazzharmony.fr</li>
+                        <li><i class="icon-phone"></i> +33 1 23 45 67 89</li>
+                        <li><i class="icon-map-marker-alt"></i> 12 Rue du Jazz, 75000 Paris</li>
+                    </ul>
+                    <div style="margin-top: 1rem;">
+                        <a href="#" class="btn" style="background-color: var(--primary-color);">Nous contacter</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023 Jazz Harmony. Tous droits réservés. | <a href="#">Mentions légales</a> | <a href="#">Politique de confidentialité</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#accueil" class="back-to-top">
+        <i class="icon-chevron-up"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+            this.innerHTML = navMenu.classList.contains('active') ?
+                '<i class="icon-times"></i>' : '<i class="icon-bars"></i>';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                const navMenu = document.getElementById('navMenu');
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    document.getElementById('mobileMenuBtn').innerHTML = '<i class="icon-bars"></i>';
+                }
+            });
+        });
+
+        // Music notes animation
+        function createMusicNotes() {
+            const notesContainer = document.getElementById('musicNotes');
+            const notes = ['♩', '♪', '♫', '♬', '♭', '♮', '♯'];
+
+            for (let i = 0; i < 20; i++) {
+                const note = document.createElement('div');
+                note.className = 'music-note';
+                note.textContent = notes[Math.floor(Math.random() * notes.length)];
+                note.style.left = Math.random() * 100 + '%';
+                note.style.animationDelay = Math.random() * 5 + 's';
+                note.style.animationDuration = (Math.random() * 5 + 3) + 's';
+                notesContainer.appendChild(note);
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.opacity = '1';
+                backToTopButton.style.visibility = 'visible';
+            } else {
+                backToTopButton.style.opacity = '0';
+                backToTopButton.style.visibility = 'hidden';
+            }
+        });
+
+        // Initialize music notes
+        createMusicNotes();
+
+        // Add back to top button style
+        const style = document.createElement('style');
+        style.textContent = `
+            .back-to-top {
+                position: fixed;
+                bottom: 2rem;
+                right: 2rem;
+                width: 50px;
+                height: 50px;
+                background-color: var(--primary-color);
+                color: white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                font-size: 1.2rem;
+                box-shadow: var(--shadow);
+                transition: var(--transition);
+                opacity: 0;
+                visibility: hidden;
+                z-index: 1000;
+            }
+
+            .back-to-top:hover {
+                background-color: var(--primary-dark);
+                transform: translateY(-3px);
+            }
+
+            .icon-clarinet:before { content: "\\f8ad"; }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
