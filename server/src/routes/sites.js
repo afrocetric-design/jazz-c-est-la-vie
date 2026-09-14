@@ -16,19 +16,19 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', authorize('SUPER_ADMIN', 'ORG_ADMIN'), async (req, res) => {
-  const { name, address } = req.body;
+  const { name, establishmentNumber, address } = req.body;
   if (!name) return res.status(400).json({ error: 'Nom requis' });
   const site = await prisma.site.create({
-    data: { name, address, organizationId: req.user.organizationId },
+    data: { name, establishmentNumber, address, organizationId: req.user.organizationId },
   });
   res.status(201).json(site);
 });
 
 router.put('/:id', authorize('SUPER_ADMIN', 'ORG_ADMIN'), async (req, res) => {
-  const { name, address } = req.body;
+  const { name, establishmentNumber, address } = req.body;
   const site = await prisma.site.updateMany({
     where: { id: req.params.id, organizationId: req.user.organizationId },
-    data: { name, address },
+    data: { name, establishmentNumber, address },
   });
   if (site.count === 0) return res.status(404).json({ error: 'Etablissement introuvable' });
   res.json({ ok: true });

@@ -29,10 +29,10 @@ async function main() {
   const org = await prisma.organization.create({ data: { name: 'Jazz Bistrot - Chaine' } });
 
   const siteParis = await prisma.site.create({
-    data: { name: 'Jazz Bistrot - Saint-Germain', address: '12 rue de Buci, 75006 Paris', organizationId: org.id },
+    data: { name: 'Jazz Bistrot - Saint-Germain', establishmentNumber: '001', address: '12 rue de Buci, 75006 Paris', organizationId: org.id },
   });
   const siteLyon = await prisma.site.create({
-    data: { name: 'Jazz Bistrot - Presqu\'ile', address: '5 rue Merciere, 69002 Lyon', organizationId: org.id },
+    data: { name: 'Jazz Bistrot - Presqu\'ile', establishmentNumber: '002', address: '5 rue Merciere, 69002 Lyon', organizationId: org.id },
   });
 
   const passwordHash = await bcrypt.hash('haccp2024', 10);
