@@ -2,6 +2,7 @@
   "name": "haccp-manager",
   "version": "1.0.0",
   "description": "Application de gestion HACCP (plan de maitrise sanitaire) pour chaine de restaurants",
+  "author": "Jazz Bistrot",
   "main": "electron/main.js",
   "private": true,
   "scripts": {
@@ -16,7 +17,7 @@
     "build": "npm run client:build",
     "start": "npm run build && electron .",
     "dev:server": "cd server && npm run dev",
-    "pack:win": "npm run build && npm run prisma:generate && electron-builder --win"
+    "pack:win": "npm run build && npm run prisma:generate && electron-builder --win --publish=never"
   },
   "dependencies": {
     "express": "^4.19.2",
@@ -35,6 +36,7 @@
   "build": {
     "appId": "fr.jazzharmony.haccp",
     "productName": "HACCP Manager",
+    "publish": null,
     "files": [
       "electron/**/*",
       "server/**/*",
