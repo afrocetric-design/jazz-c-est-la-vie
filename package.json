@@ -1,0 +1,60 @@
+{
+  "name": "haccp-manager",
+  "version": "1.0.0",
+  "description": "Application de gestion HACCP (plan de maitrise sanitaire) pour chaine de restaurants",
+  "main": "electron/main.js",
+  "private": true,
+  "scripts": {
+    "server:install": "cd server && npm install",
+    "client:install": "cd client && npm install",
+    "install:all": "npm install && npm run server:install && npm run client:install",
+    "prisma:generate": "npx prisma generate --schema=server/prisma/schema.prisma",
+    "prisma:migrate": "cd server && npx prisma migrate deploy",
+    "db:seed": "cd server && npm run seed",
+    "client:build": "cd client && npm run build",
+    "server:start": "node server/src/index.js",
+    "build": "npm run client:build",
+    "start": "npm run build && electron .",
+    "dev:server": "cd server && npm run dev",
+    "pack:win": "npm run build && npm run prisma:generate && electron-builder --win"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "@prisma/client": "^5.20.0",
+    "dotenv": "^16.4.5",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "electron": "^31.3.1",
+    "electron-builder": "^24.13.3",
+    "prisma": "^5.20.0"
+  },
+  "build": {
+    "appId": "fr.jazzharmony.haccp",
+    "productName": "HACCP Manager",
+    "files": [
+      "electron/**/*",
+      "server/**/*",
+      "client/dist/**/*",
+      "package.json",
+      "!server/node_modules/**/*",
+      "!server/prisma/dev.db",
+      "!server/prisma/migrations/**/*.sql.bak"
+    ],
+    "asarUnpack": [
+      "**/*.node",
+      "**/@prisma/**",
+      "**/.prisma/**"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
