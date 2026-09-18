@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  const { siteId, dishName, value, mealService, minRequired, maxRequired, checkedBy, notes } = req.body;
+  const { siteId, dishName, value, mealService, stage, minRequired, maxRequired, checkedBy, notes } = req.body;
   if (!siteId || !dishName || value === undefined || value === '') {
     return res.status(400).json({ error: 'Etablissement, plat et temperature requis' });
   }
@@ -45,6 +45,7 @@ router.post('/', async (req, res) => {
       dishName,
       value: numValue,
       mealService: mealService || 'DEJEUNER',
+      stage: stage || null,
       minRequired: min,
       maxRequired: max,
       conform,

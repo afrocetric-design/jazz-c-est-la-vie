@@ -138,12 +138,14 @@ model TemperatureReading {
 }
 
 // mealService: PETIT_DEJEUNER | DEJEUNER | DINER | AUTRE
+// stage: DEBUT | MILIEU | FIN (moment du service ou a lieu le controle)
 model ServiceTemperatureCheck {
   id          String   @id @default(cuid())
   siteId      String
   dishName    String
   value       Float
   mealService String   @default("DEJEUNER")
+  stage       String?
   minRequired Float?
   maxRequired Float?
   conform     Boolean  @default(true)

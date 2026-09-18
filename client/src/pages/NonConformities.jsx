@@ -45,7 +45,8 @@ export default function NonConformities() {
     const draft = actionDrafts[ncId];
     if (!draft?.description) return;
     await api.post(`/non-conformities/${ncId}/actions`, draft);
-    setActionDrafts((d) => ({ ...d, [ncId]: { description: '', assignedTo: '', dueDate: '' } }));
+    // La personne assignee reste remplie (souvent la meme sur plusieurs actions de suite)
+    setActionDrafts((d) => ({ ...d, [ncId]: { description: '', assignedTo: draft.assignedTo || '', dueDate: '' } }));
     load();
   };
 

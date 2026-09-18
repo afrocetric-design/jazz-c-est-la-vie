@@ -27,6 +27,12 @@ export const MEAL_SERVICES = [
   { value: 'AUTRE', label: 'Autre' },
 ];
 
+export const SERVICE_STAGES = [
+  { value: 'DEBUT', label: 'Debut de service' },
+  { value: 'MILIEU', label: 'Milieu de service' },
+  { value: 'FIN', label: 'Fin de service' },
+];
+
 export const TASK_FREQUENCIES = [
   { value: 'QUOTIDIEN', label: 'Quotidien' },
   { value: 'HEBDOMADAIRE', label: 'Hebdomadaire' },
