@@ -19,11 +19,27 @@ const NAV_ITEMS = [
 export default function Layout() {
   const { user, logout, activeSiteId, changeSite, isMultiSiteRole } = useAuth();
   const [sites, setSites] = useState([]);
+  const [remindersCount, setRemindersCount] = useState(0);
   const navigate = useNavigate();
 
   useEffect(() => {
     api.get('/sites').then(({ data }) => setSites(data)).catch(() => {});
   }, []);
+
+  useEffect(() => {
+    const loadReminders = () => {
+      api
+        .get('/dashboard', { params: { siteId: activeSiteId || undefined } })
+        .then(({ data }) => {
+          setRemindersCount((data.equipmentsWithoutReadingToday?.length || 0) + (data.pendingDailyCleaningTasks?.length || 0));
+        })
+        .catch(() => {});
+    };
+    loadReminders();
+    // Verifie a nouveau toutes les 10 minutes pendant que l'application reste ouverte
+    const interval = setInterval(loadReminders, 10 * 60 * 1000);
+    return () => clearInterval(interval);
+  }, [activeSiteId]);
 
   const handleLogout = () => {
     logout();
@@ -49,7 +65,12 @@ export default function Layout() {
               }
             >
               <span>{item.icon}</span>
-              {item.label}
+              <span className="flex-1">{item.label}</span>
+              {item.to === '/' && remindersCount > 0 && (
+                <span className="rounded-full bg-orange-500 px-2 py-0.5 text-xs font-semibold text-white">
+                  {remindersCount}
+                </span>
+              )}
             </NavLink>
           ))}
         </nav>
